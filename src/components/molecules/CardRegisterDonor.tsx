@@ -30,7 +30,7 @@ const CardRegisterDonor = ({
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex flex-col gap-2 md:col-span-2">
-            <label htmlFor="name" className="text-white font-medium">
+            <label htmlFor="name" className="text-[#ECE4DA] font-medium">
               Nome
             </label>
             <Controller
@@ -41,13 +41,13 @@ const CardRegisterDonor = ({
               )}
             />
             {errors.name && (
-              <span className="text-red-500 text-sm">
+              <span className="text-destructive text-sm">
                 {errors.name.message as string}
               </span>
             )}
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="text-white font-medium">
+            <label htmlFor="email" className="text-[#ECE4DA] font-medium">
               Email
             </label>
             <Controller
@@ -62,13 +62,13 @@ const CardRegisterDonor = ({
               )}
             />
             {errors.email && (
-              <span className="text-red-500 text-sm">
+              <span className="text-destructive text-sm">
                 {errors.email.message as string}
               </span>
             )}
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="phone" className="text-white font-medium">
+            <label htmlFor="phone" className="text-[#ECE4DA] font-medium">
               Telefone
             </label>
             <Controller
@@ -83,13 +83,13 @@ const CardRegisterDonor = ({
               )}
             />
             {errors.phone && (
-              <span className="text-red-500 text-sm">
+              <span className="text-destructive text-sm">
                 {errors.phone.message as string}
               </span>
             )}
           </div>
           <div className="flex flex-col gap-2 md:col-span-2">
-            <label htmlFor="message" className="text-white font-medium">
+            <label htmlFor="message" className="text-[#ECE4DA] font-medium">
               Mensagem
             </label>
             <Controller
@@ -104,7 +104,7 @@ const CardRegisterDonor = ({
               )}
             />
             {errors.message && (
-              <span className="text-red-500 text-sm">
+              <span className="text-destructive text-sm">
                 {errors.message.message as string}
               </span>
             )}
@@ -113,7 +113,7 @@ const CardRegisterDonor = ({
             <Button onClick={onClickBack}>Voltar</Button>
             {!isLoading && (
               <Button
-                className="bg-[#FF9F0D] hover:bg-[#e68a00] px-6 py-2 font-semibold"
+                className="bg-[#B76A3D] hover:bg-[#C88758] px-6 py-2 font-semibold"
                 type="submit"
                 disabled={isLoading}
               >
@@ -121,7 +121,7 @@ const CardRegisterDonor = ({
               </Button>
             )}
             {isLoading && (
-              <div className="bg-[#FF9F0D] rounded-md text-white hover:bg-[#e68a00] px-6 py-2 font-semibold">
+              <div className="bg-[#B76A3D] rounded-md text-[#ECE4DA] hover:bg-[#C88758] px-6 py-2 font-semibold">
                 <Spinner color="white" />
               </div>
             )}

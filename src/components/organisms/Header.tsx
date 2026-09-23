@@ -1,63 +1,71 @@
-import { PiForkKnifeFill } from "react-icons/pi";
-import { ItemContent, ItemGroup, ItemHeader, ItemTitle } from "../ui/item";
-import { useNavigate, useLocation } from "react-router";
+import { useNavigate,  } from "react-router";
+import { ArrowUpRight, MapPin } from "lucide-react";
 
-function Header() {
+export function Header() {
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const navItems = [
-    {
-      label: "Home",
-      path: "/home",
-    },
-    {
-      label: "Mapa",
-      path: "/maps",
-    },
-    {
-      label: "Doar",
-      path: "/doar",
-    },
+  const links = [
+    ["EXPLORAR", "#explorar"],
+    ["CAFÉS", "#cafes"],
+    ["AVALIAÇÕES", "#avaliacoes"],
+    ["SOBRE", "#sobre"],
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black shadow-md z-50">
-      <div
-        className="flex items-center justify-center gap-2 p-4"
-        onClick={() => navigate("/home")}
-      >
-        <PiForkKnifeFill size={30} className="text-[#FF9F0D]" />
-        <h1 className="text-md font-semibold text-white">
-          Comidas sem Fronteiras
-        </h1>
-      </div>
-      <ItemGroup className="flex items-center">
-        <ItemHeader>
-          <ItemContent className="flex flex-row gap-4 text-white mb-4">
-            {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
-              return (
-                <ItemTitle
-                  key={item.label}
-                  className={`flex flex-col items-center cursor-pointer transition-colors duration-200 ${
-                    isActive
-                      ? "border-b-2 text-[#FF9F0D] border-[#FF9F0D] font-bold"
-                      : "text-white hover:border-b-2 hover:border-[#FF9F0D]"
-                  }`}
-                  onClick={() => navigate(item.path)}
-                  aria-current={isActive ? "page" : undefined}
-                  tabIndex={0}
-                  role="link"
+    <>
+      <header className="sticky top-0 left-0 w-full bg-[#050403]  backdrop-blur-md  border-[#211811] z-40">
+        <main className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-18 ">
+          <section>
+            <a
+              className={`whitespace-nowrap font-black tracking-[-0.06em] text-[#ECE4DA]`}
+              href="#top"
+              aria-label="Guia do Cafezin, início"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              GUIA
+              <span className="mx-1 text-[9px] font-bold tracking-normal text-[#C88758]">
+                DO
+              </span>
+              CAFEZIN<i className="ml-0.5 align-top text-[8px] not-italic">®</i>
+            </a>
+          </section>
+          
+          <section
+            onClick={() => {}}
+            className="flex items-center gap-2.5 cursor-pointer select-none group shrink-0"
+          >
+            <nav
+              aria-label="Navegação principal"
+              className="hidden text-[#ECE4DA] items-center gap-5 md:flex lg:gap-7"
+            >
+              {links.map(([label, href]) => (
+                <a
+                  className="text-[9px] font-extrabold tracking-wider opacity-80 transition-opacity hover:opacity-100"
+                  href={href}
+                  key={label}
                 >
-                  {item.label}
-                </ItemTitle>
-              );
-            })}
-          </ItemContent>
-        </ItemHeader>
-      </ItemGroup>
-    </header>
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </section>
+
+          <section className="flex items-center gap-2.5 shrink-0">
+            <button
+              type="button"
+              onClick={() => navigate("/maps")}
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#B76A3D] px-4 py-2 text-xs font-bold text-[#050403] transition-all hover:bg-[#C88758] active:scale-[0.98] cursor-pointer shadow-xs"
+            >
+              <MapPin className="w-3.5 h-3.5" />
+              <span>Explorar cafés</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
+          </section>
+        </main>
+      </header>
+    </>
   );
 }
 

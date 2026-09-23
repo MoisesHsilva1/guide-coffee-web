@@ -8,7 +8,7 @@ interface NewsletterCardProps {
 
 const NewsCard = ({ title, imageUrl, link }: NewsletterCardProps) => {
   return (
-    <Card className="flex flex-col gap-4 py-0 items-start bg-black text-white rounded-none">
+    <Card className="flex flex-col gap-4 py-0 items-start bg-[#050403] text-[#ECE4DA] rounded-none">
       <img
         className="w-full sm:w-80 h-32 sm:h-40 object-cover rounded-xs"
         src={imageUrl}
@@ -22,7 +22,7 @@ const NewsCard = ({ title, imageUrl, link }: NewsletterCardProps) => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex px-4 py-2 rounded-md text-[#FF9F0D] font-medium underline hover:text-yellow-500 transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 active:bg-yellow-100 text-base sm:text-sm"
+              className="inline-flex px-4 py-2 rounded-md text-[#B76A3D] font-medium underline hover:text-[#B76A3D] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C88758] focus:ring-offset-2 active:bg-[#211811] text-base sm:text-sm"
               aria-label={`Leia mais sobre ${title}`}
               tabIndex={0}
             >

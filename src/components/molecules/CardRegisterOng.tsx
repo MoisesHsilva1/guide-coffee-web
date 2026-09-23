@@ -30,7 +30,7 @@ const CardRegisterOng = ({
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex flex-col">
-            <label htmlFor="name" className="text-white mb-1 font-medium">
+            <label htmlFor="name" className="text-[#ECE4DA] mb-1 font-medium">
               Nome
             </label>
             <Controller
@@ -41,13 +41,13 @@ const CardRegisterOng = ({
               )}
             />
             {errors.name?.message && (
-              <span className="text-red-500 mt-1">
+              <span className="text-destructive mt-1">
                 {String(errors.name.message)}
               </span>
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="email" className="text-white mb-1 font-medium">
+            <label htmlFor="email" className="text-[#ECE4DA] mb-1 font-medium">
               Email
             </label>
             <Controller
@@ -62,13 +62,13 @@ const CardRegisterOng = ({
               )}
             />
             {errors.email && (
-              <span className="text-red-500 mt-1">
+              <span className="text-destructive mt-1">
                 {String(errors.email.message)}
               </span>
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="phone" className="text-white mb-1 font-medium">
+            <label htmlFor="phone" className="text-[#ECE4DA] mb-1 font-medium">
               Telefone
             </label>
             <Controller
@@ -83,13 +83,13 @@ const CardRegisterOng = ({
               )}
             />
             {errors.phone && (
-              <span className="text-red-500 mt-1">
+              <span className="text-destructive mt-1">
                 {String(errors.phone.message)}
               </span>
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="cnpj" className="text-white mb-1 font-medium">
+            <label htmlFor="cnpj" className="text-[#ECE4DA] mb-1 font-medium">
               CNPJ
             </label>
             <Controller
@@ -100,13 +100,13 @@ const CardRegisterOng = ({
               )}
             />
             {errors.cnpj && (
-              <span className="text-red-500 mt-1">
+              <span className="text-destructive mt-1">
                 {String(errors.cnpj.message)}
               </span>
             )}
           </div>
           <div className="flex flex-col md:col-span-2">
-            <label htmlFor="address" className="text-white mb-1 font-medium">
+            <label htmlFor="address" className="text-[#ECE4DA] mb-1 font-medium">
               Endereço
             </label>
             <Controller
@@ -120,7 +120,7 @@ const CardRegisterOng = ({
               )}
             />
             {errors.address && (
-              <span className="text-red-500 mt-1">
+              <span className="text-destructive mt-1">
                 {String(errors.address.message)}
               </span>
             )}
@@ -128,7 +128,7 @@ const CardRegisterOng = ({
           <div className="flex flex-col md:col-span-2">
             <label
               htmlFor="description"
-              className="text-white mb-1 font-medium"
+              className="text-[#ECE4DA] mb-1 font-medium"
             >
               Descrição
             </label>
@@ -144,7 +144,7 @@ const CardRegisterOng = ({
               )}
             />
             {errors.description && (
-              <span className="text-red-500 mt-1">
+              <span className="text-destructive mt-1">
                 {String(errors.description.message)}
               </span>
             )}
@@ -154,7 +154,7 @@ const CardRegisterOng = ({
             <Button onClick={onClickBack}>Voltar</Button>
             {!isLoading && (
               <Button
-                className="bg-[#FF9F0D] hover:bg-[#e68a00] px-6 py-2 font-semibold"
+                className="bg-[#B76A3D] hover:bg-[#C88758] px-6 py-2 font-semibold"
                 type="submit"
                 disabled={isLoading}
               >
@@ -162,7 +162,7 @@ const CardRegisterOng = ({
               </Button>
             )}
             {isLoading && (
-              <div className="bg-[#FF9F0D] rounded-md text-white hover:bg-[#e68a00] px-6 py-2 font-semibold">
+              <div className="bg-[#B76A3D] rounded-md text-[#ECE4DA] hover:bg-[#C88758] px-6 py-2 font-semibold">
                 <Spinner color="white"/>
               </div>
             )}
