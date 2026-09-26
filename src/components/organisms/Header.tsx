@@ -1,15 +1,11 @@
 import { useNavigate,  } from "react-router";
 import { ArrowUpRight, MapPin } from "lucide-react";
+import { Button } from "../ui/button";
+import { linksHeader } from "@/constants/linksHeader";
 
 export function Header() {
   const navigate = useNavigate();
 
-  const links = [
-    ["EXPLORAR", "#explorar"],
-    ["CAFÉS", "#cafes"],
-    ["AVALIAÇÕES", "#avaliacoes"],
-    ["SOBRE", "#sobre"],
-  ];
 
   return (
     <>
@@ -40,9 +36,9 @@ export function Header() {
               aria-label="Navegação principal"
               className="hidden text-[#ECE4DA] items-center gap-5 md:flex lg:gap-7"
             >
-              {links.map(([label, href]) => (
+              {linksHeader.map(([label, href]) => (
                 <a
-                  className="text-[9px] font-extrabold tracking-wider opacity-80 transition-opacity hover:opacity-100"
+                  className="text-[10px] font-extrabold tracking-wider opacity-80 transition-opacity hover:opacity-100"
                   href={href}
                   key={label}
                 >
@@ -53,7 +49,7 @@ export function Header() {
           </section>
 
           <section className="flex items-center gap-2.5 shrink-0">
-            <button
+            <Button
               type="button"
               onClick={() => navigate("/maps")}
               className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#B76A3D] px-4 py-2 text-xs font-bold text-[#050403] transition-all hover:bg-[#C88758] active:scale-[0.98] cursor-pointer shadow-xs"
@@ -61,7 +57,7 @@ export function Header() {
               <MapPin className="w-3.5 h-3.5" />
               <span>Explorar cafés</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
+            </Button>
           </section>
         </main>
       </header>

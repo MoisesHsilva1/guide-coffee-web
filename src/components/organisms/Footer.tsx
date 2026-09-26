@@ -1,21 +1,36 @@
-import { Coffee } from "lucide-react";
+import Logo from "../atoms/Logo";
 
 const Footer = () => {
-  <>
-    <footer className="border-t border-[#211811] bg-[#050403] py-10 text-xs text-[#94877D]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-2">
-          <div className="flex h-6 w-6 items-center justify-center rounded-md bg-[#0D0B09] border border-[#211811] text-[#B76A3D]">
-            <Coffee className="w-3.5 h-3.5" />
-          </div>
-          <span className="font-bold text-[#ECE4DA]">Guia do Cafezin</span>
-        </div>
-
-        <div className="text-center sm:text-right">
-          <span>© {new Date().getFullYear()} Guia do Cafezin.</span>
-        </div>
-      </div>
+  return (
+    <footer id="sobre">
+      <section className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-coffee-cream/25 px-3 py-5 text-center sm:justify-between sm:px-7">
+        <Logo />
+        <nav
+          aria-label="Links do rodapé"
+          className="flex flex-wrap justify-center gap-3 sm:gap-[17px]"
+        >
+          {[
+            ["EXPLORAR", "/home#explorar"],
+            ["MAPA", "/home#mapa"],
+            ["CAFÉS", "/home#cafes"],
+            ["AVALIAÇÕES", "/home#avaliacoes"],
+            ["SOBRE", "/home#sobre"],
+          ].map(([label, href]) => (
+            <a
+              className="text-[8px] font-extrabold tracking-wider hover:text-caramel-light"
+              href={href}
+              key={label}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+        <p className="w-full text-[8px] font-extrabold tracking-widest text-coffee-muted sm:w-auto">
+          FEITO PRA QUEM LEVA CAFÉ A SÉRIO.
+        </p>
+      </section>
     </footer>
-  </>;
+  );
 };
+
 export default Footer;

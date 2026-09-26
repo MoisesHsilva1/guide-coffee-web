@@ -6,8 +6,8 @@ const Reviews = () => {
       className="grid items-center gap-8 px-2 py-20 sm:px-[5.5%] sm:py-28 lg:min-h-[525px] lg:grid-cols-[.85fr_1.15fr] lg:gap-[7%]"
       id="avaliacoes"
     >
-      <div>
-        <p className="mb-5 text-[9px] font-extrabold tracking-[0.14em]">
+      <div className="flex flex-col items-start gap-5">
+        <p className="text-[9px] font-extrabold tracking-[0.14em]">
           03 — GENTE QUE SABE
         </p>
         <h2 className="font-sans text-[clamp(2.8rem,6vw,4.6rem)] font-black uppercase leading-[0.88] tracking-[-0.075em]">
@@ -15,20 +15,20 @@ const Reviews = () => {
           <br />
           QUEM <span className="text-caramel">AMA CAFÉ.</span>
         </h2>
-        <p className="my-5 max-w-[300px] text-[13px] leading-relaxed">
+        <p className="max-w-[300px] text-[13px] leading-relaxed">
           Um lugar bom fica ainda melhor quando alguém conta pra gente.
         </p>
         <a
-          className="mt-6 inline-flex items-center gap-2 text-[9px] font-extrabold tracking-wider hover:text-caramel"
+          className="inline-flex items-center gap-2 text-[9px] font-extrabold tracking-wider hover:text-caramel"
           href="#sobre"
         >
           LEIA AS AVALIAÇÕES <ArrowRight size={15} />
         </a>
       </div>
       <div className="relative mx-auto h-[340px] w-full max-w-[560px] sm:h-[350px]">
-        <article className="absolute left-[2%] top-[5%] z-[1] w-[72%] rotate-[-5deg] rounded-[5px] border-2 border-coffee-border bg-coffee-surface p-5 shadow-[5px_5px_0_#050403] sm:left-[6%] sm:w-[280px] sm:p-6">
+        <article className="absolute left-[2%] top-[5%] z-[1] flex w-[72%] flex-col gap-3 rotate-[-5deg] rounded-[5px] border-2 border-coffee-border bg-coffee-surface p-5 shadow-[5px_5px_0_#050403] sm:left-[6%] sm:w-[280px] sm:p-6">
           <div className="text-[17px] tracking-[2px] text-caramel">★★★★★</div>
-          <blockquote className="my-3 font-sans text-lg font-black leading-[1.06] tracking-tight sm:text-xl">
+          <blockquote className="font-sans text-lg font-black leading-[1.06] tracking-tight sm:text-xl">
             “Ambiente incrível e o espresso é absurdo de bom.”
           </blockquote>
           <div className="flex items-center gap-2 text-[9px] font-extrabold tracking-wider">
@@ -46,10 +46,10 @@ const Reviews = () => {
             ✳
           </span>
         </article>
-        <article className="absolute bottom-[1%] right-[2%] w-[72%] rotate-[5deg] rounded-[5px] border-2 border-coffee-border bg-coffee-raised p-5 shadow-[5px_5px_0_#050403] sm:right-[1%] sm:w-[280px] sm:p-6">
+        <article className="absolute bottom-[1%] right-[2%] flex w-[72%] flex-col gap-3 rotate-[5deg] rounded-[5px] border-2 border-coffee-border bg-coffee-raised p-5 shadow-[5px_5px_0_#050403] sm:right-[1%] sm:w-[280px] sm:p-6">
           <span className="absolute -top-2 left-[40%] h-4 w-14 -rotate-6 bg-caramel/80" />
           <div className="text-[17px] tracking-[2px] text-caramel">★★★★★</div>
-          <blockquote className="my-3 font-sans text-lg font-black leading-[1.06] tracking-tight sm:text-xl">
+          <blockquote className="font-sans text-lg font-black leading-[1.06] tracking-tight sm:text-xl">
             “Vim pelo coado. Voltei pelo bolo de laranja.”
           </blockquote>
           <div className="flex items-center gap-2 text-[9px] font-extrabold tracking-wider">
