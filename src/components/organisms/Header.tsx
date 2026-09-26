@@ -14,11 +14,8 @@ export function Header() {
           <section>
             <a
               className={`whitespace-nowrap font-black tracking-[-0.06em] text-[#ECE4DA]`}
-              href="#top"
+              href="/home"
               aria-label="Guia do Cafezin, início"
-              onClick={() => {
-                navigate("/");
-              }}
             >
               GUIA
               <span className="mx-1 text-[9px] font-bold tracking-normal text-[#C88758]">

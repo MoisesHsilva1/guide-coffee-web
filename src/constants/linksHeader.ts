@@ -1,6 +1,6 @@
-  export const linksHeader = [
-    ["EXPLORAR", "#explorar"],
-    ["CAFÉS", "#cafes"],
-    ["AVALIAÇÕES", "#avaliacoes"],
-    ["SOBRE", "#sobre"],
-  ];
+export const linksHeader = [
+  ["EXPLORAR", "/home#explorar"],
+  ["CAFÉS", "/home#cafes"],
+  ["AVALIAÇÕES", "/home#avaliacoes"],
+  ["SOBRE", "/home#sobre"],
+];

@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import coffeeHomeImage from "@/assets/coffee-home.png";
 import MapSection from "../organisms/home/MapSection";
-import Reviews from "../organisms/home/Reviews";
 import Feed from "./Feed";
 
 function Hero() {
@@ -59,7 +58,6 @@ export default function Home() {
         <Hero />
         <MapSection />
         <Feed />
-        <Reviews />
       </div>
     </main>
   );
