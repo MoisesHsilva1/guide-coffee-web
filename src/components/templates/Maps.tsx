@@ -27,16 +27,16 @@ function Maps() {
   };
 
   return (
-    <div className="relative flex h-screen w-full overflow-hidden bg-[#050403] text-[#ECE4DA]">
+    <div className="relative flex h-[calc(100dvh-4.5rem)] w-full overflow-hidden bg-[#050403] text-[#ECE4DA]">
       <Map aria-label="Mapa interativo de cafeterias" className="absolute inset-0 z-0 size-full" onLocationChange={setUserLocation} onSelectReview={selectReview} reviews={reviews} selectedReviewId={selectedReview?.id} showLocationPrompt useUserLocation />
-      <div className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full bg-[#0D0B09E6] px-3 py-2 text-[10px] font-extrabold tracking-wider text-[#ECE4DA] shadow-lg sm:left-6 sm:top-6">
+      <div className="absolute left-20 top-4 z-10 flex items-center gap-2 rounded-full bg-[#0D0B09E6] px-3 py-2 text-[10px] font-extrabold tracking-wider text-[#ECE4DA] shadow-lg sm:left-20 sm:top-6">
         <MapPin aria-hidden="true" className="text-[#C88758]" size={14} />
         {isPending ? "CARREGANDO CAFÉS..." : `${reviews.length} CAFÉS NO MAPA`}
       </div>
-      {!sidebarOpen && <button aria-label="Abrir cafés no mapa" className="fixed bottom-6 right-4 z-20 inline-flex items-center gap-2 rounded-full bg-[#B76A3D] px-5 py-3 text-sm font-semibold text-[#ECE4DA] shadow-lg transition-all hover:bg-[#C88758] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C88758] sm:right-6 sm:top-6 sm:bottom-auto" onClick={() => setSidebarOpen(true)} type="button"><LocateFixed aria-hidden="true" size={16} />Ver cafés</button>}
+      {!sidebarOpen && <button aria-label="Abrir cafés no mapa" className="absolute bottom-6 right-4 z-20 inline-flex items-center gap-2 rounded-full bg-[#B76A3D] px-5 py-3 text-sm font-semibold text-[#ECE4DA] shadow-lg transition-all hover:bg-[#C88758] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C88758] sm:right-6 sm:top-6 sm:bottom-auto" onClick={() => setSidebarOpen(true)} type="button"><LocateFixed aria-hidden="true" size={16} />Ver cafés</button>}
 
       <AnimatePresence>
-        {sidebarOpen && <motion.aside aria-label="Cafés avaliados" className="fixed right-0 top-0 z-20 flex h-full w-full max-w-full flex-col overflow-y-auto border-l border-[#211811] bg-[#050403] px-5 py-6 shadow-2xl sm:w-[420px] sm:rounded-l-3xl sm:px-6 sm:py-8" initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", stiffness: 300, damping: 30 }}>
+        {sidebarOpen && <motion.aside aria-label="Cafés avaliados" className="absolute right-0 top-0 z-20 flex h-full w-full max-w-full flex-col overflow-y-auto border-l border-[#211811] bg-[#050403] px-5 py-6 shadow-2xl sm:w-[420px] sm:rounded-l-3xl sm:px-6 sm:py-8" initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", stiffness: 300, damping: 30 }}>
           <div className="mb-6 flex items-start justify-between gap-4"><div><p className="text-[10px] font-extrabold tracking-[0.2em] text-[#C88758]">{userLocation ? "ORDENADOS POR DISTÂNCIA" : "PONTOS NO MAPA"}</p><h1 className="mt-2 text-2xl font-black tracking-tight">Cafés avaliados</h1></div><button aria-label="Fechar cafés no mapa" className="rounded-full bg-[#0D0B09] p-2 transition-colors hover:bg-[#211811] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C88758]" onClick={() => setSidebarOpen(false)} type="button"><X aria-hidden="true" size={20} /></button></div>
           {isError && <p className="rounded-xl border border-[#211811] bg-[#0D0B09] p-4 text-xs text-[#94877D]">Não foi possível carregar os cafés agora.</p>}
           {!isPending && !isError && sortedReviews.length === 0 && <p className="rounded-xl border border-[#211811] bg-[#0D0B09] p-4 text-xs text-[#94877D]">Nenhum café com localização válida foi encontrado.</p>}
