@@ -13,7 +13,7 @@ const Footer = () => {
             ["EXPLORAR", "/home#explorar"],
             ["MAPA", "/home#mapa"],
             ["CAFÉS", "/home#cafes"],
-            ["AVALIAÇÕES", "/home#avaliacoes"],
+            ["AVALIAÇÕES", "/reviews"],
             ["SOBRE", "/home#sobre"],
           ].map(([label, href]) => (
             <a

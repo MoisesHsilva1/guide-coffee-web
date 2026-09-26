@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import coffeeHomeImage from "@/assets/coffee-home.png";
 import MapSection from "../organisms/home/MapSection";
-import Feed from "./Feed";
+import ReviewsSection from "../organisms/home/ReviewsSection";
 
 function Hero() {
   return (
@@ -53,11 +53,11 @@ function Hero() {
 
 export default function Home() {
   return (
-    <main className="dark overflow-hidden bg-background p-0 font-sans text-foreground">
+    <main className="dark overflow-hidden p-0 font-sans text-foreground">
       <div className="mx-auto max-w-[1440px]">
         <Hero />
         <MapSection />
-        <Feed />
+        <ReviewsSection  />
       </div>
     </main>
   );
