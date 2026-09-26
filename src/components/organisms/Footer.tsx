@@ -2,7 +2,7 @@ import Logo from "../atoms/Logo";
 
 const Footer = () => {
   return (
-    <footer id="sobre">
+    <footer>
       <section className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-coffee-cream/25 px-3 py-5 text-center sm:justify-between sm:px-7">
         <Logo />
         <nav
@@ -14,7 +14,8 @@ const Footer = () => {
             ["MAPA", "/home#mapa"],
             ["CAFÉS", "/home#cafes"],
             ["AVALIAÇÕES", "/reviews"],
-            ["SOBRE", "/home#sobre"],
+            ["SOBRE", "/sobre"],
+            ["CONTATO", "/sobre#contato"],
           ].map(([label, href]) => (
             <a
               className="text-[8px] font-extrabold tracking-wider hover:text-caramel-light"
