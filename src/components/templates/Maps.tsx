@@ -1,45 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 import { Button } from "../ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
-import Environment from "@/config/env";
+import Map from "../organisms/Map";
 
 function Maps() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [userLocation, setUserLocation] = useState<{
-    lat: number;
-    lon: number;
-  } | null>(null);
-  const mapRef = useRef<mapboxgl.Map | null>(null);
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!userLocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        setUserLocation({ lat: latitude, lon: longitude });
-      });
-    }
-    return () => {};
-  }, [userLocation]);
-
-  useEffect(() => {
-    mapboxgl.accessToken = Environment.VITE_MAPBOX_TOKEN;
-    mapRef.current = new mapboxgl.Map({
-      container: mapContainerRef.current as HTMLElement,
-      style: "mapbox://styles/mapbox/dark-v10",
-      center: userLocation
-        ? [userLocation.lon, userLocation.lat]
-        : [-46.64102, -23.55445],
-      zoom: 12.9,
-    });
-    return () => {
-      mapRef.current?.remove();
-    };
-  }, [userLocation]);
 
   const sidebarVariants = {
     open: {
@@ -54,9 +20,10 @@ function Maps() {
 
   return (
     <div className="relative w-full h-screen bg-[#050403] text-[#ECE4DA] flex overflow-hidden">
-      <div
-        className="absolute inset-0 w-full h-full z-0"
-        ref={mapContainerRef}
+      <Map
+        aria-label="Mapa interativo de cafeterias"
+        className="absolute inset-0 z-0 size-full"
+        useUserLocation
       />
       <AnimatePresence>
         {sidebarOpen && (
@@ -72,7 +39,7 @@ function Maps() {
           >
             <div className="flex items-center justify-between mb-6">
               <span className="text-2xl font-bold tracking-tight text-[#ECE4DA]">
-                ONG Selecionada
+                Café selecionado
               </span>
               <button
                 aria-label="Fechar sidebar"
@@ -109,9 +76,9 @@ function Maps() {
         <button
           className="fixed right-4 bottom-6 sm:top-6 sm:right-6 z-20 bg-[#B76A3D] hover:bg-[#C88758] text-[#ECE4DA] rounded-full shadow-lg px-5 py-3 font-semibold text-base transition-all"
           onClick={() => setSidebarOpen(true)}
-          aria-label="Abrir informações da ONG"
+          aria-label="Abrir informações do mapa"
         >
-          Ver ONG
+          Ver informações
         </button>
       )}
     </div>
