@@ -32,16 +32,17 @@ const MapSection = () => {
             aria-label="Preview do mapa real de cafeterias em São Paulo"
             className="size-full min-h-[270px] lg:min-h-[365px]"
             interactive={false}
-            useUserLocation
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050403CC] via-transparent to-transparent"
           />
           <Link
             aria-label="Abrir o mapa completo de cafeterias"
-            className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-[#050403CC] via-transparent to-transparent p-5 text-center text-[10px] font-extrabold tracking-wider text-[#ECE4DA] transition-colors hover:bg-[#05040333] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-6px] focus-visible:outline-[#C88758]"
+            className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-[#B76A3D] px-4 py-2.5 text-center text-[10px] font-extrabold tracking-wider text-[#050403] shadow-[3px_3px_0_#050403] transition-colors hover:bg-[#C88758] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C88758]"
             to="/maps"
           >
-            <span className="flex items-center gap-2 rounded-full bg-[#B76A3D] px-4 py-2.5 text-[#050403] shadow-[3px_3px_0_#050403]">
-              VER MAPA COMPLETO <ArrowRight size={14} />
-            </span>
+            VER MAPA COMPLETO <ArrowRight size={14} />
           </Link>
         </div>
         <aside
