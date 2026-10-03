@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,20 +9,6 @@ import { projectConfig } from "@/config/project";
 function About() {
   const [formState, setFormState] = useState({ name: "", email: "", idea: "" });
   const [feedback, setFeedback] = useState("");
-  const [supportFeedback, setSupportFeedback] = useState("");
-
-  const handleSupport = async () => {
-    if (!projectConfig.supportPixCode) return;
-
-    try {
-      await navigator.clipboard.writeText(projectConfig.supportPixCode);
-      setSupportFeedback("Pix copiado! É só colar no app do seu banco.");
-    } catch {
-      setSupportFeedback(
-        "Não foi possível copiar automaticamente. Tente novamente pelo navegador.",
-      );
-    }
-  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
