@@ -11,7 +11,7 @@ const ReviewsSection = () => {
 
   return (
     <section
-      className="grid items-center bg-espresso gap-8 px-2 py-20 sm:px-[5.5%] sm:py-28 lg:min-h-[525px] lg:grid-cols-[.85fr_1.15fr] lg:gap-[7%]"
+      className="grid items-center bg-black gap-8 px-2 py-20 sm:px-[5.5%] sm:py-28 lg:min-h-[525px] lg:grid-cols-[.85fr_1.15fr] lg:gap-[7%]"
       id="avaliacoes"
     >
       <header className="flex flex-col items-start gap-5">
