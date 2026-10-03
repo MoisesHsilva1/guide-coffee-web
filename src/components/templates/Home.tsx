@@ -2,7 +2,6 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import coffeeHomeImage from "@/assets/coffee-home.png";
-import MapSection from "../organisms/home/MapSection";
 import ReviewsSection from "../organisms/home/ReviewsSection";
 
 function Hero() {
@@ -31,7 +30,7 @@ function Hero() {
               asChild
               className="h-11 rounded-full border-2 border-coffee-border bg-primary px-4 text-[9px] font-extrabold text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[3px_3px_0_#050403]"
             >
-              <Link to="/maps">
+              <Link to="/reviews">
                 EXPLORAR CAFÉS <ArrowRight />
               </Link>
             </Button>
@@ -56,8 +55,7 @@ export default function Home() {
     <main className="dark overflow-hidden p-0 font-sans text-foreground">
       <div className="mx-auto max-w-[1440px]">
         <Hero />
-        <MapSection />
-        <ReviewsSection  />
+        <ReviewsSection />
       </div>
     </main>
   );

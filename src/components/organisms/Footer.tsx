@@ -11,11 +11,8 @@ const Footer = () => {
         >
           {[
             ["EXPLORAR", "/home#explorar"],
-            ["MAPA", "/home#mapa"],
-            ["CAFÉS", "/home#cafes"],
             ["AVALIAÇÕES", "/reviews"],
             ["SOBRE", "/sobre"],
-            ["CONTATO", "/sobre#contato"],
           ].map(([label, href]) => (
             <a
               className="text-[8px] font-extrabold tracking-wider hover:text-caramel-light"

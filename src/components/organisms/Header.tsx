@@ -1,11 +1,10 @@
-import { useNavigate,  } from "react-router";
+import { useNavigate } from "react-router";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
 import { linksHeader } from "@/constants/linksHeader";
 
 export function Header() {
   const navigate = useNavigate();
-
 
   return (
     <>
@@ -24,7 +23,7 @@ export function Header() {
               CAFEZIN<i className="ml-0.5 align-top text-[8px] not-italic">®</i>
             </a>
           </section>
-          
+
           <section
             onClick={() => {}}
             className="flex items-center gap-2.5 cursor-pointer select-none group shrink-0"
@@ -48,7 +47,7 @@ export function Header() {
           <section className="flex items-center gap-2.5 shrink-0">
             <Button
               type="button"
-              onClick={() => navigate("/maps")}
+              onClick={() => navigate("/reviews")}
               className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#B76A3D] px-4 py-2 text-xs font-bold text-[#050403] transition-all hover:bg-[#C88758] active:scale-[0.98] cursor-pointer shadow-xs"
             >
               <MapPin className="w-3.5 h-3.5" />
