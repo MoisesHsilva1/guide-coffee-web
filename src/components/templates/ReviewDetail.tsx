@@ -39,7 +39,7 @@ export default function ReviewDetail() {
 
   if (isPending) {
     return (
-      <main className="dark min-h-screen bg-background px-4 py-12 text-foreground sm:px-[5.5%] sm:py-20">
+      <main className="dark min-h-screen overflow-x-hidden bg-background px-5 py-10 text-foreground sm:px-[5.5%] sm:py-20">
         <div className="mx-auto max-w-[1000px]">
           <div className="mb-10 h-4 w-36 animate-pulse rounded bg-coffee-surface" />
           <section
@@ -60,10 +60,10 @@ export default function ReviewDetail() {
 
   if (isNotFound) {
     return (
-      <main className="dark min-h-screen bg-background px-4 py-12 text-foreground sm:px-[5.5%] sm:py-20">
+      <main className="dark min-h-screen overflow-x-hidden bg-background px-5 py-10 text-foreground sm:px-[5.5%] sm:py-20">
         <div className="mx-auto max-w-[1000px]">
           <Link
-            className="mb-10 inline-flex items-center gap-2 text-[10px] font-extrabold tracking-wider text-coffee-muted hover:text-caramel"
+            className="mb-8 inline-flex min-h-11 items-center gap-2 text-xs font-extrabold tracking-wider text-coffee-muted hover:text-caramel sm:mb-10"
             to="/reviews"
           >
             <ArrowLeft size={15} /> VOLTAR PARA AVALIAÇÕES
@@ -76,7 +76,7 @@ export default function ReviewDetail() {
               Essa avaliação pode ter sido removida ou não existe mais.
             </p>
             <Link
-              className="inline-flex rounded-full bg-primary px-4 py-2 text-[10px] font-extrabold text-primary-foreground"
+              className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-2 text-xs font-extrabold text-primary-foreground"
               to="/reviews"
             >
               VER TODAS AS AVALIAÇÕES
@@ -89,10 +89,10 @@ export default function ReviewDetail() {
 
   if (isError || !review) {
     return (
-      <main className="dark min-h-screen bg-background px-4 py-12 text-foreground sm:px-[5.5%] sm:py-20">
+      <main className="dark min-h-screen overflow-x-hidden bg-background px-5 py-10 text-foreground sm:px-[5.5%] sm:py-20">
         <div className="mx-auto max-w-[1000px]">
           <Link
-            className="mb-10 inline-flex items-center gap-2 text-[10px] font-extrabold tracking-wider text-coffee-muted hover:text-caramel"
+            className="mb-8 inline-flex min-h-11 items-center gap-2 text-xs font-extrabold tracking-wider text-coffee-muted hover:text-caramel sm:mb-10"
             to="/reviews"
           >
             <ArrowLeft size={15} /> VOLTAR PARA AVALIAÇÕES
@@ -105,7 +105,7 @@ export default function ReviewDetail() {
               Tente novamente em alguns instantes.
             </p>
             <button
-              className="rounded-full bg-primary px-4 py-2 text-[10px] font-extrabold text-primary-foreground"
+              className="min-h-11 rounded-full bg-primary px-5 py-2 text-xs font-extrabold text-primary-foreground"
               onClick={() => refetch()}
               type="button"
             >
@@ -120,10 +120,10 @@ export default function ReviewDetail() {
   const rating = Math.max(0, Math.min(5, Math.round(review.rating)));
 
   return (
-    <main className="dark min-h-screen bg-background px-4 py-12 text-foreground sm:px-[5.5%] sm:py-20">
+    <main className="dark min-h-screen overflow-x-hidden bg-background px-5 py-10 text-foreground sm:px-[5.5%] sm:py-20">
       <div className="mx-auto max-w-[1000px]">
         <Link
-          className="mb-10 inline-flex items-center gap-2 text-[10px] font-extrabold tracking-wider text-coffee-muted hover:text-caramel"
+          className="mb-8 inline-flex min-h-11 items-center gap-2 text-xs font-extrabold tracking-wider text-coffee-muted hover:text-caramel sm:mb-10"
           to="/reviews"
         >
           <ArrowLeft size={15} /> VOLTAR PARA AVALIAÇÕES
@@ -153,7 +153,7 @@ export default function ReviewDetail() {
                     />
                   ))}
                 </div>
-                <span className="rounded-full border border-coffee-border bg-coffee-raised px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-wider">
+                <span className="rounded-full border border-coffee-border bg-coffee-raised px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider">
                   {review.drinkType}
                 </span>
               </header>
