@@ -47,7 +47,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
                 />
               ))}
             </div>
-            <span className="rounded-full border border-coffee-border bg-coffee-raised px-2.5 py-1 text-[8px] font-extrabold uppercase tracking-wider">
+            <span className="rounded-full border border-coffee-border bg-coffee-raised px-2.5 py-1.5 text-[10px] font-extrabold uppercase tracking-wider">
               {review.drinkType}
             </span>
         </header>
@@ -67,7 +67,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
             </p>
           </section>
 
-          <footer className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-coffee-border pt-4 text-[9px] font-extrabold tracking-wider text-coffee-muted">
+          <footer className="mt-auto flex flex-col items-start gap-3 border-t border-coffee-border pt-4 text-[11px] font-extrabold tracking-wider text-coffee-muted sm:flex-row sm:items-center sm:justify-between">
             <span className="flex min-w-0 items-center gap-1.5">
               <MapPin size={13} className="shrink-0 text-caramel" />
               <span className="truncate">{review.address}</span>
@@ -77,7 +77,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
             </time>
           </footer>
 
-          <span className="text-center text-[8px] font-extrabold tracking-wider text-caramel">
+          <span className="flex min-h-11 items-center justify-center text-center text-[10px] font-extrabold tracking-wider text-caramel">
             VER AVALIAÇÃO COMPLETA
           </span>
         </div>

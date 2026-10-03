@@ -11,7 +11,7 @@ const ReviewsSection = () => {
 
   return (
     <section
-      className="grid items-center bg-black gap-8 px-2 py-20 sm:px-[5.5%] sm:py-28 lg:min-h-[525px] lg:grid-cols-[.85fr_1.15fr] lg:gap-[7%]"
+      className="grid items-center gap-8 bg-black px-5 py-16 sm:px-[5.5%] sm:py-28 lg:min-h-[525px] lg:grid-cols-[.85fr_1.15fr] lg:gap-[7%]"
       id="avaliacoes"
     >
       <header className="flex flex-col items-start gap-5">
@@ -24,7 +24,7 @@ const ReviewsSection = () => {
           Um lugar bom fica ainda melhor quando alguém conta pra gente.
         </p>
         <Link
-          className="inline-flex items-center gap-2 text-[9px] font-extrabold tracking-wider hover:text-caramel"
+          className="inline-flex min-h-11 items-center gap-2 text-xs font-extrabold tracking-wider hover:text-caramel"
           to="/reviews"
         >
           LEIA AS AVALIAÇÕES <ArrowRight size={15} />
