@@ -8,5 +8,5 @@ export interface reviewResponse {
   latitude: number;
   longitude: number;
   address: string;
-  createAt: string;
+  createdAt: string;
 }
