@@ -31,13 +31,13 @@ function About() {
 
   return (
     <main className="dark overflow-hidden bg-background font-sans text-foreground">
-      <div className="mx-auto max-w-[1440px] px-2 pb-14 sm:px-[5.5%] sm:pb-24">
-        <section className="border-2 border-coffee-border bg-espresso px-6 py-12 sm:px-10 lg:px-[5.5%] lg:py-20">
+      <div className="mx-auto max-w-[1440px] px-5 pb-14 sm:px-[5.5%] sm:pb-24">
+        <section className="border-2 border-coffee-border bg-espresso px-5 py-10 sm:px-10 lg:px-[5.5%] lg:py-20">
           <div>
             <p className="mb-5 text-[10px] font-extrabold tracking-[0.22em] text-caramel-light">
               SOBRE O PROJETO
             </p>
-            <h1 className="text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.075em]">
+            <h1 className="text-[clamp(2.8rem,12vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.075em]">
               UM GUIA FEITO
               <br />
               POR QUEM AMA
@@ -55,14 +55,14 @@ function About() {
         </section>
 
         <section
-          className="mx-auto grid max-w-5xl gap-8 pt-16 sm:pt-24 lg:grid-cols-[.8fr_1.2fr] lg:gap-14"
+          className="mx-auto grid max-w-5xl gap-10 pt-14 sm:pt-24 lg:grid-cols-[.8fr_1.2fr] lg:gap-14"
           id="contato"
         >
           <div>
             <p className="text-[10px] font-extrabold tracking-[0.2em] text-caramel-light">
               VAMOS CONVERSAR
             </p>
-            <h2 className="mt-4 text-4xl font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-6xl">
+            <h2 className="mt-4 text-[clamp(2.5rem,11vw,3.75rem)] font-black uppercase leading-[0.9] tracking-[-0.06em] sm:text-6xl">
               Tem uma ideia?
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-coffee-muted">
@@ -78,11 +78,11 @@ function About() {
           </div>
 
           <Card className="rounded-[22px] border-2 border-coffee-border bg-coffee-surface shadow-none">
-            <CardContent className="p-5 sm:p-7">
+            <CardContent className="p-4 sm:p-7">
               <form className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label
-                    className="space-y-2 text-xs font-bold"
+                    className="space-y-2 text-sm font-bold"
                     htmlFor="contact-name"
                   >
                     Nome
@@ -98,7 +98,7 @@ function About() {
                     />
                   </label>
                   <label
-                    className="space-y-2 text-xs font-bold"
+                    className="space-y-2 text-sm font-bold"
                     htmlFor="contact-email"
                   >
                     E-mail
@@ -119,7 +119,7 @@ function About() {
                   </label>
                 </div>
                 <label
-                  className="block space-y-2 text-xs font-bold"
+                  className="block space-y-2 text-sm font-bold"
                   htmlFor="contact-idea"
                 >
                   Sua ideia
@@ -136,7 +136,7 @@ function About() {
                   />
                 </label>
                 <Button
-                  className="w-full rounded-full bg-primary text-xs font-extrabold text-primary-foreground hover:bg-caramel-light"
+                  className="min-h-12 w-full rounded-full bg-primary text-sm font-extrabold text-primary-foreground hover:bg-caramel-light"
                   type="submit"
                 >
                   ENVIAR IDEIA <Send />

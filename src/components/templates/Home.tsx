@@ -7,12 +7,12 @@ import ReviewsSection from "../organisms/home/ReviewsSection";
 function Hero() {
   return (
     <section
-      className="relative flex  flex-col overflow-hidden  border-2 border-coffee-border bg-espresso px-6 pt-5 sm:px-10 lg:min-h-[655px] lg:px-[5.5%]"
-      id="top"
+      className="relative flex flex-col overflow-hidden border-2 border-coffee-border bg-espresso px-5 pt-4 sm:px-10 lg:min-h-[655px] lg:px-[5.5%]"
+      id="explorar"
     >
       <div className="grid flex-1 items-center lg:grid-cols-[1.05fr_.95fr]">
-        <div className="z-[1] flex flex-col items-start gap-5 py-9 lg:py-12">
-          <h1 className="font-sans text-[clamp(3.2rem,8vw,6.3rem)] font-black uppercase leading-[0.86] tracking-[-0.075em]">
+        <div className="z-[1] flex flex-col items-start gap-5 py-8 sm:py-9 lg:py-12">
+          <h1 className="font-sans text-[clamp(2.8rem,12vw,6.3rem)] font-black uppercase leading-[0.86] tracking-[-0.075em]">
             DESCUBRA
             <br />
             SEU PRÓXIMO
@@ -28,7 +28,7 @@ function Hero() {
           <div className="flex flex-wrap gap-2.5">
             <Button
               asChild
-              className="h-11 rounded-full border-2 border-coffee-border bg-primary px-4 text-[9px] font-extrabold text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[3px_3px_0_#050403]"
+              className="min-h-12 rounded-full border-2 border-coffee-border bg-primary px-5 text-xs font-extrabold text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[3px_3px_0_#050403]"
             >
               <Link to="/reviews">
                 EXPLORAR CAFÉS <ArrowRight />
@@ -36,7 +36,7 @@ function Hero() {
             </Button>
           </div>
         </div>
-        <div className="relative mx-auto grid aspect-square h-[310px] w-full max-w-[470px] place-items-center sm:h-[400px] lg:h-[470px]">
+        <div className="relative mx-auto grid aspect-square w-[min(100%,20rem)] max-w-[470px] place-items-center sm:w-full sm:max-w-[400px] lg:max-w-[470px]">
           <div className="absolute inset-[-3%] rotate-[-8deg] rounded-[42%_58%_54%_46%/48%_42%_58%_52%] bg-caramel shadow-[8px_8px_0_#050403]" />
           <div className="absolute inset-[6%] rotate-[5deg] rounded-full border-2 border-dashed border-coffee-cream/50" />
           <img
