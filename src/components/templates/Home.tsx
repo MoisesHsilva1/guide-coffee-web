@@ -36,7 +36,7 @@ function Hero() {
             </Button>
           </div>
         </div>
-        <div className="relative mx-auto grid aspect-square w-[min(100%,20rem)] max-w-[470px] place-items-center sm:w-full sm:max-w-[400px] lg:max-w-[470px]">
+        <div className="relative mx-auto hidden aspect-square w-[min(100%,20rem)] max-w-[470px] place-items-center sm:w-full sm:max-w-[400px] lg:grid lg:max-w-[470px]">
           <div className="absolute inset-[-3%] rotate-[-8deg] rounded-[42%_58%_54%_46%/48%_42%_58%_52%] bg-caramel shadow-[8px_8px_0_#050403]" />
           <div className="absolute inset-[6%] rotate-[5deg] rounded-full border-2 border-dashed border-coffee-cream/50" />
           <img
