@@ -54,9 +54,6 @@ function IdeasCallout() {
   return (
     <section className="grid gap-5 border-x-2 border-b-2 border-coffee-border bg-coffee-surface px-5 py-10 sm:px-[5.5%] sm:py-14 lg:grid-cols-[1fr_auto] lg:items-center">
       <div>
-        <p className="text-[10px] font-extrabold tracking-[0.2em] text-caramel-light">
-          O GUIA É DA COMUNIDADE
-        </p>
         <h2 className="mt-3 max-w-3xl text-[clamp(2.3rem,6vw,4.4rem)] font-black uppercase leading-[0.88] tracking-[-0.07em]">
           Tem uma ideia para deixar tudo mais <span className="text-caramel">legal?</span>
         </h2>
