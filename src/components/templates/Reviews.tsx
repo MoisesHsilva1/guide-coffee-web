@@ -1,6 +1,5 @@
-import { ArrowLeft, LoaderCircle } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { Link } from "react-router";
 import ReviewCard from "@/components/molecules/ReviewCard";
 import { useInfiniteReviews } from "@/hooks/useReview";
 
@@ -39,13 +38,6 @@ export default function Reviews() {
   return (
     <main className="dark min-h-screen overflow-x-hidden bg-background px-5 py-10 text-foreground sm:px-[5.5%] sm:py-20">
       <div className="mx-auto max-w-[1260px]">
-        <Link
-          className="mb-8 inline-flex min-h-11 items-center gap-2 text-xs font-extrabold tracking-wider text-coffee-muted hover:text-caramel sm:mb-10"
-          to="/home"
-        >
-          <ArrowLeft size={15} /> VOLTAR PARA HOME
-        </Link>
-
         <header className="mb-12 max-w-2xl space-y-4">
           <h1 className="font-sans text-[clamp(2.8rem,12vw,6rem)] font-black uppercase leading-[0.86] tracking-[-0.075em]">
             GENTE QUE
@@ -53,21 +45,29 @@ export default function Reviews() {
             <span className="text-caramel">AMA CAFÉ.</span>
           </h1>
           <p className="max-w-[470px] text-sm leading-relaxed text-coffee-muted">
-            Descubra o que a comunidade está provando e encontre inspiração
-            para a sua próxima parada.
+            Descubra o que a comunidade está provando e encontre inspiração para
+            a sua próxima parada.
           </p>
         </header>
 
         {isPending && (
           <ul
             aria-label="Carregando avaliações"
-            className="grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3"
+            className="grid list-none grid-cols-[minmax(0,1fr)] gap-5 p-0 sm:grid-cols-[repeat(2,minmax(0,1fr))] lg:grid-cols-[repeat(3,minmax(0,1fr))]"
           >
             {[0, 1, 2].map((item) => (
-              <li
-                className="h-[390px] animate-pulse rounded-[5px] border-2 border-coffee-border bg-coffee-surface"
-                key={item}
-              />
+              <li className="min-w-0 animate-pulse overflow-hidden rounded-[5px] border-2 border-coffee-border bg-coffee-surface" key={item}>
+                <div className="aspect-[16/10] w-full bg-coffee-raised" />
+                <div className="space-y-4 p-4 sm:p-6">
+                  <div className="h-4 w-1/3 rounded bg-coffee-raised" />
+                  <div className="space-y-2">
+                    <div className="h-5 w-4/5 rounded bg-coffee-raised" />
+                    <div className="h-4 w-full rounded bg-coffee-raised" />
+                    <div className="h-4 w-3/4 rounded bg-coffee-raised" />
+                  </div>
+                  <div className="h-4 w-2/3 rounded bg-coffee-raised" />
+                </div>
+              </li>
             ))}
           </ul>
         )}
@@ -100,10 +100,10 @@ export default function Reviews() {
         {!isPending && !isError && reviews.length > 0 && (
           <ul
             aria-label="Avaliações da comunidade"
-            className="grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3"
+            className="grid list-none grid-cols-[minmax(0,1fr)] gap-5 p-0 sm:grid-cols-[repeat(2,minmax(0,1fr))] lg:grid-cols-[repeat(3,minmax(0,1fr))]"
           >
             {reviews.map((review) => (
-              <li key={review.id}>
+              <li className="min-w-0" key={review.id}>
                 <ReviewCard review={review} />
               </li>
             ))}
