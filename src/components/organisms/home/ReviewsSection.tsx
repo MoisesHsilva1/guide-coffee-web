@@ -31,16 +31,24 @@ const ReviewsSection = () => {
         </Link>
       </header>
 
-      <ul className="mx-auto grid w-full max-w-[560px] list-none gap-4 p-0 sm:grid-cols-2 lg:max-w-none">
+      <ul className="mx-auto grid w-full max-w-[560px] min-w-0 list-none grid-cols-[minmax(0,1fr)] gap-4 p-0 sm:grid-cols-[repeat(2,minmax(0,1fr))] lg:max-w-none">
         {isPending &&
           [0, 1].map((item) => (
-            <li
-              className="h-[300px] animate-pulse rounded-[5px] border-2 border-coffee-border bg-coffee-surface"
-              key={item}
-            />
+            <li className="min-w-0 animate-pulse overflow-hidden rounded-[5px] border-2 border-coffee-border bg-coffee-surface" key={item}>
+              <div className="aspect-[16/10] w-full bg-coffee-raised" />
+              <div className="space-y-4 p-4 sm:p-6">
+                <div className="h-4 w-1/3 rounded bg-coffee-raised" />
+                <div className="space-y-2">
+                  <div className="h-5 w-4/5 rounded bg-coffee-raised" />
+                  <div className="h-4 w-full rounded bg-coffee-raised" />
+                  <div className="h-4 w-3/4 rounded bg-coffee-raised" />
+                </div>
+                <div className="h-4 w-2/3 rounded bg-coffee-raised" />
+              </div>
+            </li>
           ))}
         {isError && (
-          <li className="col-span-full rounded-[5px] border-2 border-coffee-border bg-coffee-surface p-6 text-sm">
+          <li className="col-span-full min-w-0 rounded-[5px] border-2 border-coffee-border bg-coffee-surface p-6 text-sm">
             Não foi possível carregar as avaliações.{" "}
             <button
               className="font-extrabold text-caramel"
@@ -52,14 +60,14 @@ const ReviewsSection = () => {
           </li>
         )}
         {!isPending && !isError && data?.rows.length === 0 && (
-          <li className="col-span-full text-sm text-coffee-muted">
+          <li className="col-span-full min-w-0 text-sm text-coffee-muted">
             Ainda não há avaliações publicadas.
           </li>
         )}
         {!isPending &&
           !isError &&
           data?.rows.map((review) => (
-            <li key={review.id}>
+            <li className="min-w-0" key={review.id}>
               <ReviewCard review={review} />
             </li>
           ))}
