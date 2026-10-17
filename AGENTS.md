@@ -103,6 +103,16 @@ Antes de implementar uma interface:
 
 Alterações visuais devem ser verificadas manualmente utilizando `npm run dev`.
 
+### Formulários mobile-first
+
+Formulários devem ser projetados primeiro para telas pequenas e permanecer
+completamente utilizáveis em viewport mobile, sem overflow horizontal ou
+elementos fora do enquadramento. Utilize campos com área de toque confortável,
+uma coluna por padrão, ações em largura total, foco visível e mensagens de erro
+próximas ao campo. Para validação, prefira o padrão existente com
+`react-hook-form`, `zodResolver`, schemas separados e os componentes
+`FormField`, `FormMessage` e `FormControl`.
+
 ## Planejamento e implementação
 
 Para features que envolvam múltiplos arquivos ou decisões relevantes, primeiro analise o código existente e produza um plano antes de implementar.

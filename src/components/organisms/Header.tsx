@@ -1,4 +1,4 @@
-import { ArrowUpRight, MapPin, Menu } from "lucide-react";
+import { ArrowUpRight, Lightbulb, MapPin, Menu } from "lucide-react";
 import { Link } from "react-router";
 import { Button } from "../ui/button";
 import {
@@ -89,11 +89,11 @@ export function Header() {
                   ))}
                   <SheetClose asChild>
                     <a
-                      className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground transition-colors hover:bg-caramel-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-caramel"
-                      href="/reviews"
+                      className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full border border-caramel bg-transparent px-4 text-sm font-bold text-caramel-light transition-colors hover:bg-caramel hover:text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-caramel"
+                      href="/ideias"
                     >
-                      <MapPin className="size-4" />
-                      Explorar cafés
+                      <Lightbulb className="size-4" />
+                      Contar uma ideia
                       <ArrowUpRight className="size-4" />
                     </a>
                   </SheetClose>
